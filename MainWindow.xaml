@@ -1,0 +1,37 @@
+<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Style="{StaticResource AppWindow}"
+        Title="Авторизация" Height="560" Width="440"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <StackPanel Margin="45,28,45,20">
+        <Image x:Name="LogoImage" Height="70" Stretch="Uniform" Margin="0,0,0,16"/>
+
+        <TextBlock Text="АВТОРИЗАЦИЯ" Style="{StaticResource Heading}" FontSize="38" HorizontalAlignment="Center"/>
+        <TextBlock Text="В О Й Д И Т Е   В   С И С Т Е М У" Style="{StaticResource SubHeading}"
+                   HorizontalAlignment="Center" Margin="0,4,0,26"/>
+
+        <TextBlock Text="ЛОГИН" Style="{StaticResource FieldLabel}"/>
+        <TextBox x:Name="LoginBox" Height="38" FontSize="15" Margin="0,6,0,16"
+                 VerticalContentAlignment="Center" MaxLength="100"/>
+
+        <TextBlock Text="ПАРОЛЬ" Style="{StaticResource FieldLabel}"/>
+        <Grid Margin="0,6,0,26">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <PasswordBox x:Name="PasswordInput" Height="38" FontSize="15"
+                         VerticalContentAlignment="Center" MaxLength="72"/>
+            <TextBox x:Name="PasswordText" Height="38" FontSize="15"
+                     VerticalContentAlignment="Center" MaxLength="72" Visibility="Collapsed"/>
+            <ToggleButton x:Name="ShowPasswordButton" Grid.Column="1" Content="Показать"
+                          Style="{StaticResource DarkToggleButton}"
+                          Width="90" Margin="8,0,0,0"
+                          Checked="ShowPassword_Checked" Unchecked="ShowPassword_Unchecked"/>
+        </Grid>
+
+        <Button Content="ВОЙТИ" Style="{StaticResource PrimaryButton}" Height="42" FontSize="15"
+                IsDefault="True" Click="Login_Click"/>
+    </StackPanel>
+</Window>

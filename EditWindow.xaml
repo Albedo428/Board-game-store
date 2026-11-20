@@ -1,0 +1,25 @@
+<Window x:Class="WpfApp1.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Style="{StaticResource AppWindow}"
+        Title="Форма" Width="560" SizeToContent="Height"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <DockPanel Margin="26,20,26,22">
+        <TextBlock x:Name="FormTitle" DockPanel.Dock="Top" Style="{StaticResource Heading}"
+                   FontSize="28" Margin="0,0,0,20" TextWrapping="Wrap"/>
+
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal"
+                    HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="Сохранить" Style="{StaticResource PrimaryButton}" Width="130" Height="34"
+                    Margin="0,0,10,0" IsDefault="True" Click="Save_Click"/>
+            <Button Content="Отмена" Width="130" Height="34" IsCancel="True"/>
+        </StackPanel>
+
+        <Grid x:Name="FormGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="170"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </DockPanel>
+</Window>
